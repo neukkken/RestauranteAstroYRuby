@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oferta: MyString
+  imgPlato: MyString
+  icono: MyString
+  nombre=string: MyString
+  tiempo: 1
+  precio: 1
+  descripcion: MyString
+
+two:
+  oferta: MyString
+  imgPlato: MyString
+  icono: MyString
+  nombre=string: MyString
+  tiempo: 1
+  precio: 1
+  descripcion: MyString
