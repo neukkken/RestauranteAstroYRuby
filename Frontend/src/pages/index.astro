@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Navbar from "../components/Navbar.astro";
+
+
+const response = await fetch('http://127.0.0.1:3000/platillos');
+const data = await response.json();
+console.log(data);
+---
+
+<Layout title="RappiSena.">
+	<Navbar />
+
+	<div class="cardsContainer">
+		{data.map(data => (
+      <Card
+        oferta={data.oferta}
+        imgPlato={data.imgPlato}
+        icono={data.icono}
+        nombre={data.nombre}
+        tiempo={data.tiempo}
+        precio={data.precio}
+      />
+    ))}
+	</div>
+</Layout>
+
+<style>
+	.cardsContainer {
+		margin-top: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: start;
+		gap: 30px;
+		padding: 0px 10px;
+	}
+</style>

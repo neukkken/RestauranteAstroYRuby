@@ -1,0 +1,155 @@
+---
+interface Props{
+    oferta: string
+    imgPlato: string
+    nombre: string
+    icono: string
+    tiempo: number
+    precio: number
+
+}
+
+const { oferta, imgPlato, nombre, icono, tiempo, precio} = Astro.props
+---
+
+
+<div class="card">
+    <div class="oferta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-discount-check-filled" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor" /></svg>
+        <p>{oferta}</p>
+    </div>
+    <img
+        src={imgPlato}
+        alt=""
+    />
+    <div class="info">
+        <img src={icono} alt="">
+        <div class="texto">
+            <h1>{nombre}</h1>
+            <span class="info textCon">
+                <span class="time">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-clock-hour-2"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"
+                        ></path><path d="M12 12l3 -2"></path><path d="M12 7v5"
+                        ></path></svg
+                    >
+                    <p>{tiempo} min</p>
+                </span>
+                <span> ·</span>
+                <span class="price">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-car"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+                        ></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+                        ></path><path
+                            d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"
+                        ></path></svg
+                    >
+                    <p>&dollar; {precio}</p>
+                </span>
+            </span>
+            <span class="description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam alias beatae amet 
+            </span>
+        </div>
+    </div>
+</div>
+
+<style>
+    .description{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+
+    h1,p {
+        margin: 0px;
+    }
+
+    .card img {
+        width: 300px;
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    .card {
+        width: 300px;
+        cursor: pointer;
+        transition: ease-in-out 0.3s;
+    }
+
+    .card:hover{
+        transform: scale(105%);
+    }
+
+    .card .oferta{
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #007AFF;
+        width: auto;
+        padding: 0px 10px;
+        height: 25px;
+        background-color: white;
+        transform: translateY(20px);
+        border-radius: 0px 15px 15px 0px;
+        position: absolute;
+        justify-content: center;
+    }
+
+    .card .info{
+        display: flex;
+        align-items: start;
+    }
+
+    .card .info .texto .time, .price{
+        font-size: 13px;
+        display: flex;
+        gap: 7px;
+    }
+
+    .card .info .texto h1{
+        font-size: 17px;
+    }
+
+    .textCon{
+        gap: 10px;
+    }
+
+    .card .info .texto{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 5px;
+    }
+
+    .card .info img{
+        width: 30px;
+        height: 30px;
+        padding: 0px 10px;
+        margin-top: 10px;
+    }
+
+</style>
